@@ -6,9 +6,11 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'diagnosis/index.html')
 
+def about_tb(request):
+    return render(request, 'diagnosis/about_tb.html')
+
 # Image upload page view
 def upload_image(request):
     if request.method == 'POST':
-        # Handle image upload logic here
-        pass
+        pass  # Image upload logic here
     return render(request, 'diagnosis/upload_image.html')
