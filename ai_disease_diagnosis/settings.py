@@ -14,6 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,6 +27,13 @@ SECRET_KEY = 'django-insecure-z)y-a@s!r*bn^g79ppa=(j2!ak7d0=*uy^g*5rqe4&5d9iykxg
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
+
 
 
 # Application definition
@@ -118,9 +126,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
-# Point to the static directory inside your app
-STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # Ensure that this points to your static folder
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

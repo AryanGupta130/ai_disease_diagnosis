@@ -1,14 +1,35 @@
-{% extends 'diagnosis/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'diagnosis/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>AI Disease Diagnosis Tool</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'upload_image' %}">Upload Image</a></li>
+                <li><a href="{% url 'about_tb' %}">About</a></li> <!-- Make sure this is correct -->
+            </ul>
+        </nav>
+    </header>
 
-{% block title %}Upload Image - AI Diagnosis{% endblock %}
+    <main>
+        <h2>Upload Your Image for Diagnosis</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="image">
+            <button type="submit">Upload Image</button>
+        </form>
+    </main>
 
-{% block content %}
-<section>
-    <h2>Upload Your Image for Diagnosis</h2>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="image" accept="image/*" required>
-        <button type="submit">Upload Image</button>
-    </form>
-</section>
-{% endblock %}
+    <footer>
+        <p>&copy; 2024 AI Disease Diagnosis. All rights reserved.</p>
+    </footer>
+</body>
+</html>

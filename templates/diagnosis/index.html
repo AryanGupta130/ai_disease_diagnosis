@@ -1,11 +1,33 @@
-{% extends 'diagnosis/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Disease Diagnosis</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'diagnosis/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>AI Disease Diagnosis Tool</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'upload_image' %}">Upload Image</a></li>
+                <li><a href="{% url 'about_tb' %}">About</a></li>
+            </ul>
+        </nav>
+    </header>
 
-{% block title %}Home - AI Diagnosis{% endblock %}
+    <main>
+        <h2>Welcome to the AI Disease Diagnosis Tool</h2>
+        <p>Upload your medical images to get AI-powered diagnostic results instantly!</p>
+        <a href="{% url 'upload_image' %}">Get Started</a>
+    </main>
 
-{% block content %}
-<section>
-    <h2>Welcome to the AI Disease Diagnosis Tool</h2>
-    <p>Upload your medical images to get AI-powered diagnostic results instantly!</p>
-    <a href="#">Get Started</a>
-</section>
-{% endblock %}
+    <footer>
+        <p>&copy; 2024 AI Disease Diagnosis. All rights reserved.</p>
+    </footer>
+</body>
+</html>

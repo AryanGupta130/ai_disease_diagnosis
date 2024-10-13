@@ -3,15 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Tuberculosis (TB)</title>
+    <title>About Tuberculosis</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'diagnosis/css/styles.css' %}">
 </head>
 <body>
-    <h1>About Tuberculosis (TB)</h1>
-    <p>Tuberculosis (TB) is an infectious disease that primarily affects the lungs. It is caused by Mycobacterium tuberculosis.</p>
-    <ul>
-        <li>TB spreads through the air when someone with TB of the lungs coughs or sneezes.</li>
-        <li>Common symptoms include cough, fever, night sweats, and weight loss.</li>
-        <li>TB is preventable and curable with proper treatment.</li>
-    </ul>
+    <header>
+        <h1>About Tuberculosis</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'upload_image' %}">Upload Image</a></li>
+                <li><a href="{% url 'about_tb' %}">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>What is Tuberculosis (TB)?</h2>
+        <p>Tuberculosis (TB) is an infectious disease that typically affects the lungs, but it can also affect other parts of the body. It is caused by bacteria called Mycobacterium tuberculosis.</p>
+        <p>Tuberculosis is spread through the air when a person with active TB disease coughs or sneezes.</p>
+
+        <h3>Symptoms of TB</h3>
+        <ul>
+            <li>Coughing that lasts three or more weeks</li>
+            <li>Coughing up blood</li>
+            <li>Chest pain</li>
+            <li>Fatigue</li>
+            <li>Fever</li>
+            <li>Night sweats</li>
+            <li>Chills</li>
+        </ul>
+
+        <h3>How is TB diagnosed?</h3>
+        <p>Doctors use a variety of tests to diagnose TB, including skin tests, blood tests, and chest X-rays.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AI Disease Diagnosis. All rights reserved.</p>
+    </footer>
 </body>
 </html>
